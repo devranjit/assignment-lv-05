@@ -8,8 +8,9 @@ import { Wallet } from './wallet';
 const router = express.Router();
 
 router.post('/add', authMiddleware(['user', 'agent', 'admin']), addMoney);
-router.post('/withdraw', authMiddleware(['user']), withdrawMoney);
-router.post('/send', authMiddleware(['user']), sendMoney);
+router.post('/withdraw', authMiddleware(['user', 'agent']), withdrawMoney);
+router.post('/send', authMiddleware(['user', 'agent']), sendMoney);
+
 
 router.get('/balance', authMiddleware(['user','agent','admin']), async (req, res) => {
   const userId = (req as any).user.id;
