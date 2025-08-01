@@ -1,6 +1,6 @@
 import express from 'express';
 import { addMoney, withdrawMoney, sendMoney, getMyTransactions } from './wallet.controller';
-import { authMiddleware } from './auth/auth.middleware';
+import { authMiddleware } from '../auth/auth.middleware';
 import { Wallet } from './wallet';
 
 

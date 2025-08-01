@@ -1,7 +1,11 @@
 import { Request, Response } from 'express';
 import { Wallet } from './wallet';
-import { User } from './user';
-import { Transaction } from './transacation';
+import { User } from '../user';
+import { Transaction } from '../transaction/transaction.model';
+
+
+
+
 
 export const addMoney = async (req: Request, res: Response) => {
   try {

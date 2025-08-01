@@ -14,10 +14,13 @@ export const authMiddleware = (roles: string[] = []) => {
         return res.status(403).json({ message: 'Access denied' });
       }
 
-      (req as any).user = decoded;
+      req.user = decoded;
       next();
     } catch (error) {
       return res.status(401).json({ message: 'Invalid token' });
     }
   };
 };
+
+export default authMiddleware;
+
