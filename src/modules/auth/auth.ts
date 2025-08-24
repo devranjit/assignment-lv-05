@@ -6,7 +6,6 @@ import { Wallet } from '../wallet/wallet';
 
 
 export const register = async (req: Request, res: Response) => {
-  console.log('Registering user...');
   try {
     const { name, email, password, role, phone } = req.body;
 
@@ -33,7 +32,6 @@ export const register = async (req: Request, res: Response) => {
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
 };
